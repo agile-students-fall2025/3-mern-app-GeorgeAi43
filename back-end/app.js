@@ -78,5 +78,18 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+// new route to serve About Us content as JSON
+app.get('/about', (req, res) => {
+  res.json({
+    title: 'About Us',
+    bio: [
+      'Hello! I\'m George, A student majoring in Business and Computer Science and currently taking agile software development.',
+      'In this project, I\'m practicing the MERN stack.',
+      'Outside of coding, I enjoy tennis and basketball.'
+    ],
+    imageUrl: '/pic.jpg',
+  })
+})
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
